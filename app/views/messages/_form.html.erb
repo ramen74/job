@@ -1,0 +1,15 @@
+<%= form_for(@message) do |f| %>
+
+  Thanks for applying for <%= @listing.description %> </br></br> 
+
+  <div class="field">
+    <%= f.label :tell_us_about_yourself %><br />
+    <%= f.text_area :message %>
+  </div>
+     
+  <%= f.hidden_field (:listing, :value => @listing.id) %>
+	
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<%- end %>

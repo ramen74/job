@@ -1,0 +1,23 @@
+<h1>Your Messages</h1>
+
+  <table>
+    <tr>
+      <th>Listing</th>
+      <th>From</th>
+      <th>Message</th>
+    </tr>
+
+  <%- @messages.each do |message| %>
+    <tr>
+	  <%- Rails.logger.debug message.inspect %>
+      <td><%= message.listing.title  %></td>
+      <td><%= message.user.email %></td>
+      <td><%= message.message %></td>
+    </tr>
+  <%- end %>
+  </table>
+
+  <br />
+
+
+<%= link_to 'New Listing', new_listing_path %>
