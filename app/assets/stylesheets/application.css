@@ -5,3 +5,46 @@
  *= require_self
  *= require_tree . 
 */
+
+body {
+  background-color: #C59A6F;
+  margin-bottom: 1px;
+  float:left;
+  color: #B4AA9D;
+  width: 100%;
+  border-color: #F5FAFA;
+  border-style: solid;
+  padding: 5px 5px 5px 5px;
+  margin-bottom: 15px;
+  float: left;
+}
+
+th {
+  font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica,
+  sans-serif;
+  color: black;/*#6D929B;*/
+  border-right: 1px solid silver; /*#C1DAD7;*/
+  border-bottom: 1px solid silver; /*#C1DAD7;*/
+  border-top: 1px solid silver; /*#C1DAD7;*/
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 2px 2px 2px 2px;
+  background: silver; /*#CAE8EA;*/
+}
+
+td {
+ letter-spacing: 1px;
+ text-align: left;
+ border-right: 1px solid silver;
+ border-bottom: 1px solid silver;
+ background: #fff;
+ padding: 2px 2px 2px 2px;
+ color: black;/*#6D929B*/;
+}
+
+
+td.alt {
+  background: #F5FAFA;
+  color: #B4AA9D;
+}

@@ -3,22 +3,23 @@ require 'test_helper'
 
 class ListingTest < ActiveSupport::TestCase
   
-  #some validation tests
-  test "should not save listing with no description" do
+  test "create a listing" do
     listing = Listing.new
-    assert !listing.save
+    #make sure we have all the good params including the association
+    listing.title = "a job"
+    listing.description = "a good job"
+    listing.company = "a great company"
+    listing.user = users(:cat)
+    assert listing.save
   end
   
-  #you must be  logged in....
-  test "should fail to save if there is no user logged in" do
-    #listing = Listing.new
-    #assert !listing.save
-  end
-  
-  #basic  case
-   test "user can create a new listing" do
-      #listing = Listing.new
-      #assert listing.save
+  test "edit a message" do
+    listing = listings(:one)
+    id = listing.id
+    listing.title = "edited title"
+    listing.save
+    edited_listing = Listing.find(id)
+    assert_equal(edited_listing.title, "edited title")
   end
   
 end
