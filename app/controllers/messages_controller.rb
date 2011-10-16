@@ -15,11 +15,10 @@ class MessagesController < ApplicationController
     def new
       
       @message = Message.new
-      
       #There should always be a listing with a Message, so go get it. 
       #TODO: is this safe.... 
       @listing = Listing.find(params[:id])
-      
+      session[:listing] = @listing
       respond_to do |format|
         format.html # new.html.erb
         format.json { render :json => @listing }
@@ -54,12 +53,9 @@ class MessagesController < ApplicationController
     
     
     def create
-      Rails.logger.debug ":::" + params.inspect
-      Rails.logger.debug ":::" + params[:message].inspect
-      Rails.logger.debug ":::" + params[:message][:listing].class.to_s
       #TODO: fix this.. hack. should just pass a different param.
-      params[:message][:listing] = Listing.find(params[:message][:listing])
       @message = Message.new(params[:message])
+      @message.listing = session[:listing]
       #Adding the user via the devise current_user user object. Validation should catch it if somehow this is nil
       @message.user = current_user
 
