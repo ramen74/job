@@ -1,11 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+#created by user cat
 one:
-  title: MyString
-  company: MyString
-  description: MyText
+  id: 1
+  title: my_job_1
+  company: my_company_1
+  description: my_description_1
+  user_id: 1
 
+#created by user cat
 two:
-  title: MyString
-  company: MyString
-  description: MyText
+  id: 2
+  title: my_job_2
+  company: my_company_1
+  description: my_description_2
+  user_id: 1
+
+#created by user dog
+three:
+  id: 3
+  title: another_job_1
+  company: another_company_1
+  description: another_company_1
+  user_id: 2
+
+#created by user pig
+three:
+  id: 4
+  title: yet_another_job_1
+  company: yet_another_company_1
+  description: yet_another_company_1
+  user_id: 3    

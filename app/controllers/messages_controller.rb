@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
    before_filter :authenticate_user!
 
     def index
+      #this action should be removed perhaps or only allowed for super users or something
       @messages = Message.all
 
       respond_to do |format|

@@ -2,14 +2,13 @@
 
   <table>
     <tr>
-      <th>Listing</th>
-      <th>From</th>
-      <th>Message</th>
+      <th>Listing </th>
+      <th>From </th>
+      <th>Message </th>
     </tr>
 
   <%- @messages.each do |message| %>
     <tr>
-	  <%- Rails.logger.debug message.inspect %>
       <td><%= message.listing.title  %></td>
       <td><%= message.user.email %></td>
       <td><%= message.message %></td>
@@ -20,4 +19,4 @@
   <br />
 
 
-<%= link_to 'New Listing', new_listing_path %>
+<%= link_to 'Back to listings', listings_path %>
